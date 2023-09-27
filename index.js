@@ -1,7 +1,7 @@
 const axios = require("axios");
 const sharp = require("sharp");
 const PexelsAPI = require("pexels-api-wrapper");
-const pexelsApiKey = '4jWu830dgkThrFWZoUHed4Ls55IctNAlizK5eT6hsSKblGycxrugX8r6';
+const { pexelsApiKey } = require("./config");
 
 const pexelsClient = new PexelsAPI(pexelsApiKey);
 
@@ -181,7 +181,7 @@ const linearFilter = async (image) => {
 
 const main = async () => {
     try {
-      const images = await findImage("tech");
+      const images = await findImage("forest");
       if (images.length === 0) {
         console.log("No images found.");
         return;
